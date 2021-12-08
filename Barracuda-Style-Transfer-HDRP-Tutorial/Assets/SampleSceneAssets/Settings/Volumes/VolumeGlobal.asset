@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7693897794395392962
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5a4302cdcdf344197c180a52a9ca1d, type: 3}
+  m_Name: StyleTransferFilter
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  FilterComputeShaderParameter:
+    m_OverrideState: 1
+    m_Value: {fileID: 7200000, guid: 942e1eb94f82d6c40a43a04a1db57455, type: 3}
+  ModelAssetParameter:
+    m_OverrideState: 1
+    m_Value: {fileID: 5022602860645237092, guid: 4b2a63d3ba05ad1418de431babb2deaf, type: 3}
+  WorkerTypeParameter:
+    m_OverrideState: 1
+    m_Value: 256
+  InputResolutionParameter:
+    m_OverrideState: 1
+    m_Value: {x: 960, y: 540}
 --- !u!114 &-3969488579639410846
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -13,6 +39,7 @@ MonoBehaviour:
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 2
@@ -73,6 +100,7 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 2
@@ -115,6 +143,26 @@ MonoBehaviour:
   m_HighQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-1611944140521558435
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76eab91f4ed721419c1a84c87dc5282, type: 3}
+  m_Name: PreprocessFilter
+  m_EditorClassIdentifier: 
+  active: 1
+  <displayName>k__BackingField: 
+  m_AdvancedMode: 0
+  m_IsInitialized: 0
+  FilterComputeShaderParameter:
+    m_OverrideState: 1
+    m_Value: {fileID: 7200000, guid: 942e1eb94f82d6c40a43a04a1db57455, type: 3}
+  rTex: {fileID: 0}
 --- !u!114 &-1167143466653396744
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -128,6 +176,7 @@ MonoBehaviour:
   m_Name: HDRISky
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   rotation:
     m_OverrideState: 1
     m_Value: 116
@@ -261,6 +310,7 @@ MonoBehaviour:
   - {fileID: -3969488579639410846}
   - {fileID: 747098994415714109}
   - {fileID: 4566301752631259820}
+  - {fileID: -7693897794395392962}
 --- !u!114 &747098994415714109
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -274,6 +324,7 @@ MonoBehaviour:
   m_Name: FilmGrain
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   type:
     m_OverrideState: 1
     m_Value: 0
@@ -303,12 +354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
     m_Value: 1
-  cloudType:
-    m_OverrideState: 0
-    m_Value: 0
   skyAmbientMode:
     m_OverrideState: 1
     m_Value: 1
@@ -328,6 +377,7 @@ MonoBehaviour:
   m_Name: ContactShadows
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 2
@@ -393,6 +443,7 @@ MonoBehaviour:
   m_Name: Fog
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 1
@@ -498,6 +549,9 @@ MonoBehaviour:
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
+  filter:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &4566301752631259820
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -511,6 +565,7 @@ MonoBehaviour:
   m_Name: ScreenSpaceRefraction
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   screenFadeDistance:
     m_OverrideState: 1
     m_Value: 0.001
@@ -529,6 +584,7 @@ MonoBehaviour:
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   quality:
     m_OverrideState: 1
     m_Value: 2
@@ -624,6 +680,7 @@ MonoBehaviour:
   m_Name: Exposure
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
     m_Value: 4
@@ -780,6 +837,7 @@ MonoBehaviour:
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
@@ -832,6 +890,7 @@ MonoBehaviour:
   m_Name: HDShadowSettings
   m_EditorClassIdentifier: 
   active: 1
+  m_AdvancedMode: 0
   maxShadowDistance:
     m_OverrideState: 1
     m_Value: 70

@@ -1,0 +1,30 @@
+﻿#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+#include "Packages/com.unity.render-pipelines.high-definition/Runtime/ShaderLibrary/ShaderVariables.hlsl"
+
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel ProcessInput
+#pragma kernel ProcessOutput
+
+
+RW_TEXTURE2D_X(half4, InputImage);
+RW_TEXTURE2D_X(half4, Result);
+
+
+
+[numthreads(8, 8, 1)]
+void ProcessInput(uint3 id : SV_DispatchThreadID)
+{
+    /*Result[COORD_TEXTURE2D_X(id.xy)] = half4((InputImage[COORD_TEXTURE2D_X(id.xy)].x * 255.0h),
+        (InputImage[COORD_TEXTURE2D_X(id.xy)].y * 255.0h),
+        (InputImage[COORD_TEXTURE2D_X(id.xy)].z * 255.0h), 1.0h);*/
+}
+
+
+[numthreads(8, 8, 1)]
+void ProcessOutput(uint3 id : SV_DispatchThreadID)
+{
+    Result[COORD_TEXTURE2D_X(id.xy)] = half4((clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].x, 0.0h, 255.0h) / 255.0h),
+        (clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].y, 0.0h, 255.0h) / 255.0h),
+        (clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].z, 0.0h, 255.0h) / 255.0h), 
+        InputImage[COORD_TEXTURE2D_X(id.xy)].z);
+}
