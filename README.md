@@ -1,5 +1,5 @@
 # Barracuda-Style-Transfer-HDRP
-![barracuda-style-transfer-hdrp-1](.\images\barracuda-style-transfer-hdrp-1.png)
+![barracuda-style-transfer-hdrp-1](./images/barracuda-style-transfer-hdrp-1.png)
 
 
 
