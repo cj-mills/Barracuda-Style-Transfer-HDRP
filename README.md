@@ -1,4 +1,4 @@
-# Barracuda-Style-Transfer-HDRP
+# Barracuda Style Transfer HDRP
 ![barracuda-style-transfer-hdrp-1](./images/barracuda-style-transfer-hdrp-1.png)
 
 
