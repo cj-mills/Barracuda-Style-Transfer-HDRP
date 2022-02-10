@@ -23,8 +23,8 @@ void ProcessInput(uint3 id : SV_DispatchThreadID)
 [numthreads(8, 8, 1)]
 void ProcessOutput(uint3 id : SV_DispatchThreadID)
 {
-    Result[COORD_TEXTURE2D_X(id.xy)] = half4((clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].x, 0.0h, 255.0h) / 255.0h),
-        (clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].y, 0.0h, 255.0h) / 255.0h),
-        (clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].z, 0.0h, 255.0h) / 255.0h), 
+    Result[COORD_TEXTURE2D_X(id.xy)] = half4(pow(clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].x, 0.0h, 255.0h) / 255.0h, 2.2),
+        pow(clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].y, 0.0h, 255.0h) / 255.0h, 2.2),
+        pow(clamp(InputImage[COORD_TEXTURE2D_X(id.xy)].z, 0.0h, 255.0h) / 255.0h, 2.2),
         InputImage[COORD_TEXTURE2D_X(id.xy)].z);
 }
